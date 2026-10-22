@@ -15,11 +15,50 @@ All model interactions use the supplied offline mock. No API key, paid model, or
 
 ## Reproduce
 
-Use Python 3.11 or later on a system with SQLite 3.25 or later. Install the dependencies listed in `requirements.txt`.
+### Requirements
 
-Run the scripts from the repository root in the following order:
+- Python 3.11 or later
+- SQLite 3.25 or later
+- Windows, macOS, or Linux
+- Dependencies listed in `requirements.txt`
+
+### Setup
+
+Clone the repository and enter the project directory:
+
+```bash
+git clone https://github.com/manosankar-glitch/instamart-copilot.git
+cd instamart-copilot
+```
+
+Create and activate a virtual environment.
+
+**Windows PowerShell:**
 
 ```powershell
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
+```
+
+**macOS/Linux:**
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+```
+
+Install dependencies:
+
+```bash
+python -m pip install -r requirements.txt
+```
+
+### Generate Data and Run the Project
+
+Run all commands from the repository root, in the following order:
+
+```bash
+python generate_data.py
 python build_database.py
 python validate_data.py
 python run_sql_queries.py
@@ -32,9 +71,11 @@ python part_d_rag.py
 python part_d_agent.py
 ```
 
-The data-generation scripts supplied with the assignment, including `generate_data.py` and `mock_llm.py`, are not modified.
+The `generate_data.py` script creates the synthetic raw datasets and policy files required by the workflow. The supplied `generate_data.py` and `mock_llm.py` files remain unmodified.
 
-Important outputs include:
+The validation script should report `ALL CHECKPOINTS PASSED` when the Part A validation checks succeed.
+
+### Key Outputs
 
 - `data/instamart.db`
 - `outputs/customer_rfm.csv`
@@ -44,9 +85,10 @@ Important outputs include:
 - `outputs/triage_budget_demo.csv`
 - `outputs/agent_runs.jsonl`
 - `outputs/refund_ledger.jsonl`
+- `reports/sql/`
 - `state/` checkpoint files
 
-The validation script prints `ALL CHECKPOINTS PASSED` when the Part A checks succeed.
+All model interactions use the supplied offline mock. No API key, paid model, or external model service is required.
 
 ## Part A — Data Cleaning, Database and SQL Analysis
 
