@@ -1,0 +1,5 @@
+segment_id,size,mean_recency,mean_frequency,mean_monetary,segment_name,is_premium
+0,436,28.86,3.77,1057.62,Developing Customers,False
+1,138,24.12,6.77,7129.7,Premium,True
+2,419,8.77,19.4,3410.02,Loyal Regulars,False
+3,182,109.04,2.2,685.99,At-Risk Occasional,False
