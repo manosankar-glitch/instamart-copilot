@@ -323,3 +323,17 @@ However, a fixed plan can become unsafe when a tool returns an unexpected result
 The supplied mock model is deterministic and offline, so these results do not establish production-level model accuracy. TF-IDF retrieval is sensitive to vocabulary and chunk boundaries. Real deployment would require stronger policy-grounding checks, authentication and authorization, idempotent refund operations, monitoring, and human oversight for uncertain or high-value decisions.
 
 All refunds and escalations in this project are simulated. No real money is moved.
+## Limitations and Next Steps
+
+### Limitations
+- The project uses generated and synthetic data, so results may differ from real-world Instamart customer and support-ticket data.
+- The language model is mocked for reproducible, no-cost evaluation; results do not establish the performance of a production LLM.
+- Classification, customer segmentation, retrieval, and refund-agent results depend on the supplied dataset, rules, and evaluation scenarios.
+- The refund workflow is a demonstration. Production deployment would require authenticated services, transaction verification, stronger access controls, audit logging, and human escalation procedures.
+
+### Next Steps
+- Evaluate the pipeline on approved, anonymized real-world data.
+- Test classification and retrieval across more diverse and challenging examples.
+- Add monitoring for accuracy, privacy protection, policy-grounding errors, and agent tool failures.
+- Integrate authenticated production services only after security, compliance, and refund-authorization reviews.
+- Document reproducible evaluation results and rerun all validation checks after changes.
